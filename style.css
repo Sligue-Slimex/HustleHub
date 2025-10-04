@@ -1,0 +1,21 @@
+/* Minimal, clean styles for HustleHub */
+:root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7c3aed}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial;background:linear-gradient(180deg,#071029 0%,#07172a 100%);color:#e6eef8;margin:0;padding:0;min-height:100vh;display:flex;flex-direction:column}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px)}
+.brand{font-weight:700;font-size:20px}
+.nav-links button{margin-left:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:inherit;cursor:pointer}
+main{flex:1;padding:20px;max-width:1000px;margin:0 auto;width:100%}
+.view{display:none}
+.view.active{display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.card{background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;box-shadow:0 4px 10px rgba(2,6,23,0.6)}
+.card img{max-width:100%;height:140px;object-fit:cover;border-radius:6px}
+form{display:flex;flex-direction:column;gap:8px;max-width:560px}
+label{display:flex;flex-direction:column;font-size:14px;color:var(--muted)}
+input,textarea,select{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+button[type=submit]{padding:10px;border-radius:8px;border:0;background:var(--accent);color:white;cursor:pointer}
+.footer{padding:12px;text-align:center;color:var(--muted);font-size:13px}
+.auth-grid{display:flex;gap:20px;flex-wrap:wrap}
+#user-info{margin-bottom:10px}
+small{opacity:0.9}

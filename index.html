@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HustleHub — Find gigs & sell used items</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">HustleHub</div>
+    <div class="nav-links">
+      <button id="nav-home">Home</button>
+      <button id="nav-market">Marketplace</button>
+      <button id="nav-jobs">Hustle Jobs</button>
+      <button id="nav-new">Post</button>
+      <button id="nav-dashboard">Dashboard</button>
+      <button id="nav-login">Sign In</button>
+      <button id="nav-logout" style="display:none">Sign Out</button>
+    </div>
+  </nav>
+
+  <main id="app">
+    <!-- Views -->
+    <section id="view-home" class="view active">
+      <h1>Welcome to HustleHub</h1>
+      <p>Find side gigs, freelance hustle jobs and buy/sell used items locally.</p>
+      <div class="cards" id="latest-cards"></div>
+    </section>
+
+    <section id="view-market" class="view">
+      <h2>Marketplace</h2>
+      <div id="market-items" class="cards"></div>
+    </section>
+
+    <section id="view-jobs" class="view">
+      <h2>Hustle Jobs</h2>
+      <div id="job-list" class="cards"></div>
+    </section>
+
+    <section id="view-post" class="view">
+      <h2>Create Listing / Job</h2>
+      <form id="form-post">
+        <label>
+          Type:
+          <select id="post-type">
+            <option value="item">Item for Sale</option>
+            <option value="job">Hustle Job</option>
+          </select>
+        </label>
+        <label>Title: <input id="post-title" required></label>
+        <label>Description: <textarea id="post-desc" required></textarea></label>
+        <label>Price (optional): <input id="post-price" type="number" min="0"></label>
+        <label>Upload Image: <input id="post-image" type="file" accept="image/*"></label>
+        <button type="submit">Publish</button>
+      </form>
+      <div id="post-result"></div>
+    </section>
+
+    <section id="view-dashboard" class="view">
+      <h2>Your Dashboard</h2>
+      <div id="user-info"></div>
+      <h3>Your Listings</h3>
+      <div id="user-listings" class="cards"></div>
+    </section>
+
+    <section id="view-auth" class="view">
+      <h2>Sign In / Register</h2>
+      <div class="auth-grid">
+        <form id="form-login">
+          <h3>Sign In</h3>
+          <label>Email: <input id="login-email" type="email" required></label>
+          <label>Password: <input id="login-password" type="password" required></label>
+          <button type="submit">Sign In</button>
+        </form>
+
+        <form id="form-register">
+          <h3>Create Account</h3>
+          <label>Name: <input id="reg-name" required></label>
+          <label>Email: <input id="reg-email" type="email" required></label>
+          <label>Password: <input id="reg-password" type="password" required></label>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+      <div id="auth-msg"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Made with ❤️ — HustleHub • Ready to deploy</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
